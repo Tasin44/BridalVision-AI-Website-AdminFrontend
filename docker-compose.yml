@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  admin_frontend:
+    build: .
+    container_name: admin_frontend
+    restart: always
+    ports:
+      - "3010:3000"
+    networks:
+      - backend_network
+
+networks:
+  backend_network:
+    external: true
+    name: bridalvision-ai-website-backend_default
